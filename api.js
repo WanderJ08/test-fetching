@@ -10,23 +10,29 @@ characters.forEach(c => {
     const imgNode = document.createElement('img')
     const nameNode = document.createElement('h2')
     const originNode = document.createElement('h3')
-    const episodeNode = document.createElement('a')
-    const brNode = document.createElement('br')
+    const articleNode = document.createElement('article')
+    const headerNode = document.createElement('header')
+    const mainNode = document.createElement('main')
+    // const episodeNode = document.createElement('a')
+    // const brNode = document.createElement('br')
 
     imgNode.src = c.image;
+    imgNode.loading = 'lazy';
     nameNode.textContent = c.name;
     originNode.textContent = c.origin.name;
-    episodeNode.href = c.episode[0];
-    episodeNode.textContent = `First episode`;
+    // episodeNode.href = c.episode[0];
+    // episodeNode.textContent = `First episode`;
 
+    headerNode.appendChild(nameNode)
+    headerNode.appendChild(originNode)
+    mainNode.appendChild(imgNode)
+    articleNode.appendChild(headerNode)
+    articleNode.appendChild(mainNode)
 
-
-    container.appendChild(imgNode)
-    container.appendChild(nameNode)
-    container.appendChild(originNode)
-    container.appendChild(episodeNode)
-    container.appendChild(brNode)
-    container.appendChild(brNode)
+    container.appendChild(articleNode)
+    // container.appendChild(episodeNode)
+    // container.appendChild(brNode)
+    // container.appendChild(brNode)
 
 
 
